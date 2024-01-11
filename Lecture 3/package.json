@@ -2,7 +2,7 @@
   "name": "lecture-3",
   "version": "1.0.0",
   "description": "Lecture 3 Code",
-  "main": "app.js",
+
   "scripts": {
     "test": "jest"
   },
