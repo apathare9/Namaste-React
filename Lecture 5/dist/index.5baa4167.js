@@ -3048,94 +3048,289 @@ const Header = ()=>{
     }, undefined);
 };
 _c1 = Header;
-const restrautList = [
+// Config Driven UI
+const restaurantList = [
     {
-        name: "Burger King",
-        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
-        cusines: [
-            "Burger",
-            "American"
-        ],
-        rating: "4.42"
+        "info": {
+            "id": "93243",
+            "name": "McDonald's",
+            "cloudinaryImageId": "405645b3118d83e89db4c65361e43733",
+            "locality": "Korum Mall",
+            "areaName": "Thane Panchpakhadi",
+            "costForTwo": "\u20B9400 for two",
+            "cuisines": [
+                "Burgers",
+                "Beverages",
+                "Cafe",
+                "Desserts"
+            ],
+            "img": "https://yt3.ggpht.com/ytc/AKedOLSpK3T_2RxkMYb-pk9oENQB0NvYpeOdXRgQe8i5=s800-c-k-c0x00ffffff-no-rj",
+            "avgRating": 4.5,
+            "parentId": "630",
+            "avgRatingString": "4.5",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 25,
+                "lastMileTravel": 2.7,
+                "serviceability": "SERVICEABLE",
+                "slaString": "25 mins",
+                "lastMileTravelString": "2.7 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-01-16 23:45:00",
+                "opened": true
+            },
+            "badges": {
+                "textExtendedBadges": [
+                    {
+                        "iconId": "guiltfree/GF_Logo_android_3x",
+                        "shortDescription": "options available",
+                        "fontColor": "#7E808C"
+                    }
+                ]
+            },
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "imageBased": {},
+                    "textBased": {},
+                    "textExtendedBadges": {
+                        "badgeObject": [
+                            {
+                                "attributes": {
+                                    "description": "",
+                                    "fontColor": "#7E808C",
+                                    "iconId": "guiltfree/GF_Logo_android_3x",
+                                    "shortDescription": "options available"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "\u20B9120 OFF",
+                "subHeader": "ABOVE \u20B9199",
+                "discountTag": "FLAT DEAL"
+            },
+            "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                    "lottie": {},
+                    "video": {}
+                }
+            },
+            "reviewsSummary": {},
+            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            "restaurantOfferPresentationInfo": {}
+        },
+        "analytics": {},
+        "cta": {
+            "link": "https://www.swiggy.com/restaurants/mcdonalds-korum-mall-thane-panchpakhadi-mumbai-93243",
+            "type": "WEBLINK"
+        }
     },
     {
-        name: "Burger King",
-        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
-        cusines: [
-            "Burger",
-            "American"
-        ],
-        rating: "4.42"
+        "info": {
+            "id": "14558",
+            "name": "KFC",
+            "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
+            "locality": "Mangal Pandey Road",
+            "areaName": "Thane Panchpakhadi",
+            "costForTwo": "\u20B9400 for two",
+            "cuisines": [
+                "Burgers",
+                "Biryani",
+                "American",
+                "Snacks",
+                "Fast Food"
+            ],
+            "avgRating": 4,
+            "parentId": "547",
+            "avgRatingString": "4.0",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 28,
+                "lastMileTravel": 2.5,
+                "serviceability": "SERVICEABLE",
+                "slaString": "28 mins",
+                "lastMileTravelString": "2.5 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-01-16 23:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "imageBased": {},
+                    "textBased": {},
+                    "textExtendedBadges": {}
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "\u20B9120 OFF",
+                "subHeader": "ABOVE \u20B9199",
+                "discountTag": "FLAT DEAL"
+            },
+            "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                    "lottie": {},
+                    "video": {}
+                }
+            },
+            "reviewsSummary": {},
+            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            "restaurantOfferPresentationInfo": {}
+        },
+        "analytics": {},
+        "cta": {
+            "link": "https://www.swiggy.com/restaurants/kfc-mangal-pandey-road-thane-panchpakhadi-mumbai-14558",
+            "type": "WEBLINK"
+        }
+    },
+    {
+        "info": {
+            "id": "9648",
+            "name": "Burger King",
+            "cloudinaryImageId": "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+            "locality": "Korum mall",
+            "areaName": "Thane West",
+            "costForTwo": "\u20B9350 for two",
+            "cuisines": [
+                "Burgers",
+                "American"
+            ],
+            "avgRating": 4.2,
+            "parentId": "166",
+            "avgRatingString": "4.2",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 29,
+                "lastMileTravel": 2.7,
+                "serviceability": "SERVICEABLE",
+                "slaString": "29 mins",
+                "lastMileTravelString": "2.7 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-01-17 02:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "imageBased": {},
+                    "textBased": {},
+                    "textExtendedBadges": {}
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "\u20B9120 OFF",
+                "subHeader": "ABOVE \u20B9199",
+                "discountTag": "FLAT DEAL"
+            },
+            "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                    "lottie": {},
+                    "video": {}
+                }
+            },
+            "reviewsSummary": {},
+            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            "restaurantOfferPresentationInfo": {}
+        },
+        "analytics": {},
+        "cta": {
+            "link": "https://www.swiggy.com/restaurants/burger-king-korum-mall-thane-west-mumbai-9648",
+            "type": "WEBLINK"
+        }
     }
 ];
-const RestaurantCard = ()=>{
+const RestaurantCard = ({ cloudinaryImageId, name, cuisines, avgRating })=>{
+    // console.log(restaurant);
+    // const {cloudinaryImageId, name, cuisines, avgRating} = restaurant.info 
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: burgerKing.image
+                src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId
             }, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 54,
+                lineNumber: 240,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: burgerKing.name
+                children: name
             }, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 55,
+                lineNumber: 241,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: burgerKing.cusines.join(", ")
+                children: cuisines.join(", ")
             }, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 56,
+                lineNumber: 242,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: [
-                    burgerKing.rating,
+                    avgRating,
                     " stars"
                 ]
             }, void 0, true, {
                 fileName: "app.js",
-                lineNumber: 57,
+                lineNumber: 243,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "app.js",
-        lineNumber: 53,
+        lineNumber: 239,
         columnNumber: 10
     }, undefined);
 };
 _c2 = RestaurantCard;
+// props - properties 
+// no key --> index key --> unique key
 const Body = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return(// <div className="restaurant-list">
+    //     <RestaurantCard {...restaurantList[0].info}/>
+    //     <RestaurantCard {...restaurantList[1].info}/>
+    //     <RestaurantCard {...restaurantList[2].info}/>
+    // </div>
+    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "restaurant-list",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 62,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 63,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 64,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+        children: restaurantList.map((restaurantList)=>{
+            return /*#__PURE__*/ (0, _react.createElement)(RestaurantCard, {
+                ...restaurantList.info,
+                key: restaurantList.info.id,
+                __source: {
+                    fileName: "app.js",
+                    lineNumber: 259,
+                    columnNumber: 16
+                },
+                __self: undefined
+            });
+        })
+    }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 61,
-        columnNumber: 10
-    }, undefined);
+        lineNumber: 257,
+        columnNumber: 5
+    }, undefined));
 };
 _c3 = Body;
 const Footer = ()=>{
@@ -3143,7 +3338,7 @@ const Footer = ()=>{
         children: "Footer"
     }, void 0, false, {
         fileName: "app.js",
-        lineNumber: 68,
+        lineNumber: 265,
         columnNumber: 10
     }, undefined);
 };
@@ -3153,17 +3348,17 @@ const AppLayout = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 72,
+                lineNumber: 269,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 73,
+                lineNumber: 270,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 74,
+                lineNumber: 271,
                 columnNumber: 13
             }, undefined)
         ]
@@ -3173,7 +3368,7 @@ _c5 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 78,
+    lineNumber: 275,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2, _c3, _c4, _c5;
