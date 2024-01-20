@@ -8,6 +8,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 function filterData(searchInput, restaurants) {
 
@@ -25,6 +26,7 @@ const Body = () => {
     const [allRestaurants, setAllRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchInput, setSearchInput] = useState([]);
+    // const [hotelIds, setOutletIds] = useState([]);
 
     useEffect( () => {
         // API Call
@@ -41,10 +43,17 @@ const Body = () => {
         // Optional Chaining
         setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+        // const outletIdArray = await json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+        // const outletIds = await outletIdArray?.map(e => e)
+
+        // setOutletIds(outletIdArray);
         
     }
 
     console.log("render");
+    console.log(allRestaurants);
 
     if (!allRestaurants) return null;
 
@@ -78,11 +87,24 @@ const Body = () => {
 
         <div className="restaurant-list">
             {/* Write logic for no restaurants found here*/}
+
             {
+                filteredRestaurants.map((restaurants) => {
+                    return ( 
+                        <Link to={"/restaurants/" + restaurants.info.id} key={restaurants.info.id}>
+                            <RestaurantCard {...restaurants.info}  />
+                        </Link>
+                    );
+                })
+            }
+
+            {/* {
                 filteredRestaurants.map((restaurants) => {
                     return <RestaurantCard {...restaurants.info} key={restaurants.info.id} />
                 })
-            }
+            } */}
+
+            {/* {console.log(restaurants.info.id)} */}
         </div>
         </>
 
