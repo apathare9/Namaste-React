@@ -1,3 +1,8 @@
+// Business dev,  channel and distribution , product management and enterprise account management,  e commerce 
+// Industry : IT telecom, hardware software and serivces and solution,  e commerce
+
+
+
 
 import { restaurantList } from "../Constants";
 import RestaurantCard from "./RestaurantCard";
@@ -6,13 +11,14 @@ import Shimmer from "./Shimmer";
 
 function filterData(searchInput, restaurants) {
 
-    const filterData = restaurants.filter((restaurants) => 
-        restaurants?.info?.name?.toLowerCase()?.includes(searchInput.toLowerCase())
+    const filterData = restaurants.filter(
+        (restaurants) => restaurants.info.name.includes(searchInput)
     );
 
     return filterData;
 
 }
+
 
 const Body = () => {
 

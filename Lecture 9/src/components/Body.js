@@ -1,18 +1,24 @@
+// Business dev,  channel and distribution , product management and enterprise account management,  e commerce 
+// Industry : IT telecom, hardware software and serivces and solution,  e commerce
 
-import { restaurantList } from "../Constants";
+
+
+
+// import { restaurantList } from "../Constants";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
 function filterData(searchInput, restaurants) {
 
-    const filterData = restaurants.filter((restaurants) => 
-        restaurants?.info?.name?.toLowerCase()?.includes(searchInput.toLowerCase())
+    const filterData = restaurants.filter(
+        (restaurants) => restaurants.info.name.includes(searchInput)
     );
 
     return filterData;
 
 }
+
 
 const Body = () => {
 
@@ -42,9 +48,9 @@ const Body = () => {
 
     if (!allRestaurants) return null;
 
-    if (filteredRestaurants?.length === 0) {
-        return <h1> No Restaurants match your Filter!! </h1>;
-    }
+    // if (filteredRestaurants?.length === 0) {
+    //     return <h1> No Restaurants match your Filter!! </h1>;
+    // }
 
     return (allRestaurants?.length === 0) ? <Shimmer /> : (
 
