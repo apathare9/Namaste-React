@@ -5,10 +5,11 @@
 
 // import { restaurantList } from "../Constants";
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 function filterData(searchInput, restaurants) {
   const filterData = restaurants.filter((restaurants) =>
@@ -23,6 +24,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchInput, setSearchInput] = useState([]);
   // const [hotelIds, setOutletIds] = useState([]);
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     // API Call
@@ -93,6 +95,15 @@ const Body = () => {
           {" "}
           Search{" "}
         </button>
+        <input
+          value={user.name}
+          onChange={(e) =>
+            setUser({
+              name: e.target.value,
+              email: "newemail@gmail.com",
+            })
+          }
+        ></input>
       </div>
 
       <div className="restaurant-list flex flex-wrap ">

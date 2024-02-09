@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 
-const Section = ({ title, description }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const Section = ({ title, description, isVisible, setIsVisible }) => {
   return (
     <div className="border border-black p-2 m-2">
-      <h3>{title}</h3>
+      <h3 className="font-bold text-md">{title}</h3>
 
       {isVisible ? (
         <button
@@ -30,12 +29,16 @@ const Section = ({ title, description }) => {
 };
 
 const Instamart = () => {
+  const [visibleSection, setIsVisibleSection] = useState();
+
   return (
     <div>
       <h1 className="text-3xl p-2 m-2 font-bold">Instamart</h1>
       <Section
         title={"About Instamart"}
         description={"This is the about section of Instamart"}
+        isVisible={visibleSection === "about"}
+        setIsVisible={() => setIsVisibleSection("about")}
       />
 
       <Section
@@ -43,6 +46,17 @@ const Instamart = () => {
         description={
           "This is the team section of Instamart. The team has 50 members...."
         }
+        isVisible={visibleSection === "team"}
+        setIsVisible={() => setIsVisibleSection("team")}
+      />
+
+      <Section
+        title={"Carrers"}
+        description={
+          "This is the team section of Instamart. The team has 50 members...."
+        }
+        isVisible={visibleSection === "carrers"}
+        setIsVisible={() => setIsVisibleSection("carrers")}
       />
     </div>
   );
