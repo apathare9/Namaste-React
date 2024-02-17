@@ -1,4 +1,11 @@
+import { useState, useEffect, useContext } from "react";
+// import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
+
 const Login = () => {
+  const { user, setUser } = useContext(UserContext);
+
   return (
     <>
       <h3>Login Form</h3>
@@ -18,10 +25,7 @@ const Login = () => {
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form class="space-y-6" action="" method="">
             <div>
-              <label
-                for="email"
-                class="block text-sm font-medium leading-6 text-gray-900"
-              >
+              <label class="block text-sm font-medium leading-6 text-gray-900">
                 Email address
               </label>
               <div class="mt-2">
@@ -30,7 +34,14 @@ const Login = () => {
                   name="email"
                   type="email"
                   autocomplete="email"
+                  placeholder="search"
                   required
+                  onChange={(e) =>
+                    setUser({
+                      name: e.target.value,
+                      email: "newemail@gmail.com",
+                    })
+                  }
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 ></input>
               </div>
@@ -38,10 +49,7 @@ const Login = () => {
 
             <div>
               <div class="flex items-center justify-between">
-                <label
-                  for="password"
-                  class="block text-sm font-medium leading-6 text-gray-900"
-                >
+                <label class="block text-sm font-medium leading-6 text-gray-900">
                   Password
                 </label>
                 <div class="text-sm">
@@ -66,22 +74,29 @@ const Login = () => {
             </div>
 
             <div>
-              <button
-                class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                type="submit"
-                href="/"
-              >
-                Sign in
-              </button>
+              <Link to="/">
+                <button
+                  //   value={user.name}
+
+                  class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  type="submit"
+                  href="/"
+                  //   onChange={(e) =>
+                  //     setUser({
+                  //       name: e.target.value,
+                  //       email: "newemail@gmail.com",
+                  //     })
+                  //   }
+                >
+                  Sign in
+                </button>
+              </Link>
             </div>
           </form>
 
           <p class="mt-10 text-center text-sm text-gray-500">
             Not a member?
-            <a
-              href="/"
-              class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-            >
+            <a class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
               Start a 14 day free trial
             </a>
           </p>

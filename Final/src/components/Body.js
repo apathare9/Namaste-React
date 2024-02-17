@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
-// import UserContext from "../utils/UserContext";
+import UserContext from "../utils/UserContext";
 
 // Filter the restaurant data according input type
 function filterData(searchInput, restaurants) {
@@ -20,6 +20,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchInput, setSearchInput] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
+  const { user, setUser } = useContext(UserContext);
 
   // use useEffect for one time call getRestaurants using empty dependency array
   useEffect(() => {
@@ -96,6 +97,16 @@ const Body = () => {
         >
           Search
         </button>
+
+        <input
+          value={user.name}
+          onChange={(e) =>
+            setUser({
+              name: e.target.value,
+              email: "newemail@gmail.com",
+            })
+          }
+        ></input>
       </div>
 
       {errorMessage && <div className="error-container">{errorMessage}</div>}

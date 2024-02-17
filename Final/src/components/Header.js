@@ -24,7 +24,9 @@ const Header = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const { user } = useContext(UserContext);
+  // const { user } = useContext(UserContext);
+
+  const { user, setUser } = useContext(UserContext);
 
   const cartItems = useSelector((store) => store.cart.items);
 
@@ -61,7 +63,17 @@ const Header = () => {
       <span className="p-10 font-bold text-red-900"> {user.name} </span>
       {isLoggedIn ? (
         <Link to="/">
-          <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+          <button
+            onClick={(e = "") =>
+              setIsLoggedIn(false) &
+              setUser({
+                name: e.target.value,
+                email: "",
+              })
+            }
+          >
+            Logout
+          </button>
         </Link>
       ) : (
         <Link to="/login">
