@@ -323,7 +323,7 @@ const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating}) => {
 
 
 // props - properties 
-// no key --> index key --> unique key
+// no key --> index key(use only if you dont have anything) --> unique key(best practice)
 const Body = () => {
     return (
         // <div className="restaurant-list">

@@ -31,7 +31,7 @@ const Body = () => {
   // async function getRestaurant to fetch Swiggy API data
   async function getRestaurants() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2181987&lng=72.9622965&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2181987&lng=72.9622965&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
     );
 
     const json = await data.json();
@@ -77,61 +77,64 @@ const Body = () => {
 
   return (
     <>
-      <div className="p-5 bg-pink-50 my-5">
-        <input
-          type="text"
-          className="search-input bg-green-50 p-2 m-2"
-          placeholder="Search"
-          value={searchInput}
-          onChange={(e) => {
-            setSearchInput(e.target.value);
-            searchFunction(e.target.value, allRestaurants);
-          }}
-        ></input>
+      <div className="relative w-11/12 max-w-[1080px] flex flex-col mx-auto pt-4">
+        <div className="p-5 my-5 font-Ginto ">
+          <input
+            type="text"
+            className="search-input bg-white p-2 m-2 border-[#d4d5d9] font-Ginto"
+            placeholder="Search "
+            value={searchInput}
+            onChange={(e) => {
+              setSearchInput(e.target.value);
+              searchFunction(e.target.value, allRestaurants);
+            }}
+          ></input>
 
-        <button
-          className="p-2 m-2 bg-purple-900 hover:bg-gray-500 text-white rounded-md"
-          onClick={() => {
-            searchFunction(searchInput, allRestaurants);
-          }}
-        >
-          Search
-        </button>
+          <button
+            className="p-2 m-2 bg-[#fc8019] hover:bg-gray-500 text-white rounded-md"
+            onClick={() => {
+              searchFunction(searchInput, allRestaurants);
+            }}
+          >
+            SEARCH
+          </button>
 
-        <input
-          value={user.name}
-          onChange={(e) =>
-            setUser({
-              name: e.target.value,
-              email: "newemail@gmail.com",
-            })
-          }
-        ></input>
-      </div>
-
-      {errorMessage && <div className="error-container">{errorMessage}</div>}
-
-      {/* if restaurants data is not fetched then display Shimmer UI after the fetched data display restaurants cards */}
-
-      {allRestaurants?.length === 0 && setAllRestaurants?.length === 0 ? (
-        <Shimmer />
-      ) : (
-        <div className="restaurant-list flex flex-wrap ">
-          {(filteredRestaurants === null
-            ? setAllRestaurants
-            : filteredRestaurants
-          ).map((restaurants) => {
-            return (
-              <Link
-                to={"/restaurants/" + restaurants?.info?.id}
-                key={restaurants?.info?.id}
-              >
-                <RestaurantCard {...restaurants?.info} />
-              </Link>
-            );
-          })}
+          {/* <input
+            value={user.name}
+            onChange={(e) =>
+              setUser({
+                name: e.target.value,
+                email: "newemail@gmail.com",
+              })
+            }
+          ></input> */}
         </div>
-      )}
+
+        {errorMessage && <div className="error-container">{errorMessage}</div>}
+
+        {/* if restaurants data is not fetched then display Shimmer UI after the fetched data display restaurants cards */}
+
+        {allRestaurants?.length === 0 && setAllRestaurants?.length === 0 ? (
+          <Shimmer />
+        ) : (
+          <div className="w-full grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-4  gap-y-10 gap-x-9 relative z-[100]">
+            {(filteredRestaurants === null
+              ? setAllRestaurants
+              : filteredRestaurants
+            ).map((restaurants) => {
+              return (
+                <Link
+                  to={"/restaurants/" + restaurants?.info?.id}
+                  key={restaurants?.info?.id}
+                >
+                  <RestaurantCard {...restaurants?.info} />
+                </Link>
+              );
+            })}
+            <div className=" flex flex-wrap "></div>
+          </div>
+        )}
+      </div>
     </>
   );
 };
