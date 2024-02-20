@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
 
+
 // Filter the restaurant data according input type
 function filterData(searchInput, restaurants) {
   const filterData = restaurants.filter((restaurants) =>
@@ -30,6 +31,8 @@ const Body = () => {
 
   // async function getRestaurant to fetch Swiggy API data
   async function getRestaurants() {
+
+    
     const data = await fetch(
       `https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2181987&lng=72.9622965&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
     );

@@ -16,6 +16,7 @@ import store from "./utils/store";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
 
+
 const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => {
