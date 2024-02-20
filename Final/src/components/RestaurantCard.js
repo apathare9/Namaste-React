@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { IMG_CDN_URL } from "../Constants";
 import UserContext from "../utils/UserContext";
 
-const RestaurantCard = ({ cloudinaryImageId, name, cuisines, avgRating,areaName, city, costForTwoMessage }) => {
+const RestaurantCard = ({ cloudinaryImageId, name, cuisines, avgRating,areaName}) => {
   const { user } = useContext(UserContext);
   // console.log(restaurant);
   // const {cloudinaryImageId, name, cuisines, avgRating} = restaurant.info

@@ -36,6 +36,7 @@ const RestaurantMenu = () => {
   ) : (
     <div className="menu flex">
       <div>
+        <h5>Testin</h5>
         <h1>Restaurant id: {id} </h1>
         <h2> {restaurant.name} </h2>
         <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} />

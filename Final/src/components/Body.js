@@ -102,7 +102,7 @@ const Body = () => {
             SEARCH
           </button>
 
-          {/* <input
+          <input
             value={user.name}
             onChange={(e) =>
               setUser({
@@ -110,7 +110,7 @@ const Body = () => {
                 email: "newemail@gmail.com",
               })
             }
-          ></input> */}
+          ></input>
         </div>
 
         {errorMessage && <div className="error-container">{errorMessage}</div>}
