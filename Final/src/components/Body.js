@@ -6,6 +6,8 @@ import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
 
 
+
+
 // Filter the restaurant data according input type
 function filterData(searchInput, restaurants) {
   const filterData = restaurants.filter((restaurants) =>
@@ -16,6 +18,10 @@ function filterData(searchInput, restaurants) {
 
 // Body Component for body section: It contain all restaurant cards
 const Body = () => {
+
+
+
+
   // useState: To create a state variable, searchText, allRestaurants and filteredRestaurants is local state variable
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -34,7 +40,10 @@ const Body = () => {
 
     
     const data = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2181987&lng=72.9622965&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2181987&lng=72.9622965&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`, {
+        method: "GET",
+    
+      }
     );
 
     const json = await data.json();
