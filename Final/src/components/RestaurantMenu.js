@@ -160,38 +160,53 @@ const RestaurantMenu = () => {
         </div>
 
         <div className="relative w-11/12 max-w-[900px] flex flex-col mx-auto pt-4">
-          <div>
+          {/* <div>
             <button
               className="p-2 m-2 bg-green-100"
               onClick={() => handleAddItem()}
             >
               Add Item
             </button>
-          </div>
+          </div> */}
 
-          <div>
-            <h1>Menu</h1>
-            <ul>
+          <div className="font-Ginto">
+            <h1 className="font-bold text-[20px] text-[#3e4152]">Menu</h1>
+            <ul className="flex w-full flex-col">
+              <span className="w-full h-[1px] mt-[2px] bg-grayText mx-auto"></span>
               {menu?.map((e) => (
-                <li key={e?.id}>
-                  {e?.name} - {e.price / 100} -- {e.description} --
-                  <button
-                    className="p-1 bg-green-50"
-                    onClick={() => addFoodItem(e)}
-                  >
-                    Add
-                  </button>
-                  <button
-                    className="p-1 bg-green-50"
-                    onClick={() => removeFoodItem(e)}
-                  >
-                    Remove
-                  </button>
-                  <img
-                    className="w-[125px] h-[125px]"
-                    src={MENU_ITEM_URL + e.imageId}
-                  />
-                </li>
+                <>
+                  <li className="pt-2 w-full grid grid-cols-2  " key={e?.id}>
+                    <div className="my-auto  items-center  ">
+                      {/* <div>{e.isVeg} </div> */}
+                      <div>{e?.name}</div>
+                      <div>{e.price / 100} Rs</div>
+                      <div className="pt-2">{e.description}</div>
+                    </div>
+
+                    <div className=" my-auto mb-[55px] ml-[280px] items-center ">
+                      <img
+                        className="w-[170px] h-[150px] object-fill "
+                        src={MENU_ITEM_URL + e.imageId}
+                      />
+
+                      <div className=" flex flex-row gap-2 mx-auto items-center relative pt-[7px]">
+                        <button
+                          className="p-1 bg-[#171a29]  text-white rounded-md font-mullish font-bold  hover:bg-lightBlue500 transition-all duration-200 py-auto px-[18px]"
+                          onClick={() => addFoodItem(e)}
+                        >
+                          Add
+                        </button>
+                        <button
+                          className="p-1 bg-[#171a29]  text-white rounded-md font-mullish font-bold  hover:bg-lightBlue500 transition-all duration-200 py-auto px-[18px]"
+                          onClick={() => removeFoodItem(e)}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <span className="w-full h-[1px] mt-[2px] bg-grayText mx-auto"></span>
+                </>
               ))}
             </ul>
           </div>

@@ -16,8 +16,6 @@ import store from "./utils/store";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
 
-
-
 const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => {
@@ -26,18 +24,20 @@ const AppLayout = () => {
     email: "",
   });
   return (
-    <Provider store={store}>
-      <UserContext.Provider
-        value={{
-          user: user,
-          setUser: setUser,
-        }}
-      >
-        <Header />
-        <Outlet />
-        <Footer />
-      </UserContext.Provider>
-    </Provider>
+    <div className="flex flex-col min-h-screen">
+      <Provider store={store}>
+        <UserContext.Provider
+          value={{
+            user: user,
+            setUser: setUser,
+          }}
+        >
+          <Header />
+          <Outlet />
+          <Footer />
+        </UserContext.Provider>
+      </Provider>
+    </div>
   );
 };
 

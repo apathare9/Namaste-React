@@ -65,8 +65,7 @@ const RestaurantCard = ({
           {avgRating}{" "}
         </h4>
         <h2 className="-mt-0.5 font-Ginto font-light text-[#02040c]">
-          {" "}
-          {areaName}{" "}
+          {areaName}
         </h2>
       </div>
 

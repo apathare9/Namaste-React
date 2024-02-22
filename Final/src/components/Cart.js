@@ -12,15 +12,17 @@ const Cart = () => {
   };
 
   return (
-    <div>
-      <h1 className="font-bold text-3xl"> Cart Items -{cartItems.length}</h1>
+    <div className="mt-4 gap-4 ml-4">
+      <div className="flex flex-row font-Whitney text-[#3e4152]">
+        <h1 className="font-bold text-3xl"> Cart Items - {cartItems.length}</h1>
 
-      <button
-        className="bg-green-100 p-2 m-5"
-        onClick={() => handleClearCart()}
-      >
-        Clear Cart
-      </button>
+        <button
+          className=" bg-[#171a29]  text-white rounded-md font-mullish font-bold  hover:bg-lightBlue500 ml-4   transition-all duration-200 py-[7px] px-[8px]"
+          onClick={() => handleClearCart()}
+        >
+          Clear Cart
+        </button>
+      </div>
 
       <div className="flex">
         {cartItems.map((cartItems) => (
